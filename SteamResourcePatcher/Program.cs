@@ -22,6 +22,8 @@ namespace SteamResourcePatcher
         }
         private static async Task Main()
         {
+            _ = new SettingsModel();
+
             if (!Directory.Exists(s_customPath))
             {
                 ErrorAndExit($"{s_customPath} does not exist");

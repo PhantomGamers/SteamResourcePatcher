@@ -7,7 +7,7 @@ namespace SteamResourcePatcher.Models
     {
         private static FileSystemWatcher? s_watcher = null;
         private static readonly MemoryCache s_memCache = new(new MemoryCacheOptions());
-        private static readonly TimeSpan s_cacheTimeSpan = TimeSpan.FromSeconds(1);
+        private static readonly TimeSpan s_cacheTimeSpan = TimeSpan.FromSeconds(Properties.Settings.Default.DelayInSeconds);
 
         internal static void CreateWatcher(string dir, PostEvictionDelegate postEvictionDelegate, IEnumerable<string>? filters = null)
         {
